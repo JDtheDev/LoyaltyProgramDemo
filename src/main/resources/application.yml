@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: loyalty-rewards-program
+
+  datasource:
+    url: jdbc:sqlite:loyalty.db?foreign_keys=on
+    driver-class-name: org.sqlite.JDBC
+
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8080
